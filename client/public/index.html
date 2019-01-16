@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <style>
     /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
@@ -17,7 +16,6 @@
       border-radius: 2px;
       margin: 1rem;
     }
-
     /* This container is needed to position the front and back side */
     .flip-card-inner {
       position: relative;
@@ -27,12 +25,10 @@
       transition: transform 0.8s;
       transform-style: preserve-3d;
     }
-
     /* Do an horizontal flip when you move the mouse over the flip box container */
     .flip-card:hover .flip-card-inner {
       transform: rotateY(180deg);
     }
-
     /* Position the front and back side */
     .flip-card-front,
     .flip-card-back {
@@ -42,13 +38,11 @@
       backface-visibility: hidden;
       overflow:hidden;
     }
-
     /* Style the front side (fallback if image is missing) */
     .flip-card-front {
       background-color: #bbb;
       color: black;
     }
-
     /* Style the back side */
     .flip-card-back {
       background-color: #cc0033;
@@ -69,7 +63,6 @@
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
-
       Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
@@ -81,38 +74,31 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
     crossorigin="anonymous"></script>
 </head>
-
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
   <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
-
       You can add webfonts, meta tags, or analytics to this file.
       The build step will place the bundled scripts into the <body> tag.
-
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-
   <!-- flipping card -->
-
   <div class="flip-card">
     <div class="flip-card-inner">
-      <div class="flip-card-front">
+      <div class="flip-card-front" style="background-color:aqua;">
         <!-- image is not working but the path is correct?? -->
-        <img src="client/src/Components/Pages/images/html.png" alt="Avatar" style="width:300px;height:300px;">
+        <h1 class="text-center align-items-middle">First Link</h1>
       </div>
       <div class="flip-card-back">
-        <h1>Week 1</h1>
-        <p>HTML-GIT-CSS</p>
-        <p></p>
+        <h3>First Link</h3>
+        <a href="#">This is the link</a>
+        <p>This is the blurb or description</p>
       </div>
     </div>
   </div>
-
-
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
@@ -125,7 +111,6 @@
       </div>
     </div>
   </div>
-
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
@@ -138,7 +123,6 @@
       </div>
     </div>
   </div>
-
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
@@ -151,7 +135,6 @@
       </div>
     </div>
   </div>
-
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
@@ -164,7 +147,6 @@
       </div>
     </div>
   </div>
-
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
@@ -177,7 +159,6 @@
       </div>
     </div>
   </div>
-
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
@@ -190,7 +171,6 @@
       </div>
     </div>
   </div>
-
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
@@ -203,7 +183,6 @@
       </div>
     </div>
   </div>
-
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
@@ -216,7 +195,6 @@
       </div>
     </div>
   </div>
-
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
@@ -229,7 +207,6 @@
       </div>
     </div>
   </div>
-
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
@@ -242,7 +219,6 @@
       </div>
     </div>
   </div>
-
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
@@ -255,7 +231,6 @@
       </div>
     </div>
   </div>
-
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
@@ -268,7 +243,6 @@
       </div>
     </div>
   </div>
-
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
@@ -281,7 +255,6 @@
       </div>
     </div>
   </div>
-
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
@@ -294,7 +267,6 @@
       </div>
     </div>
   </div>
-
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
@@ -307,7 +279,6 @@
       </div>
     </div>
   </div>
-
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
@@ -320,7 +291,6 @@
       </div>
     </div>
   </div>
-
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
@@ -333,7 +303,6 @@
       </div>
     </div>
   </div>
-
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
@@ -346,7 +315,6 @@
       </div>
     </div>
   </div>
-
   <div class="flip-card">
       <div class="flip-card-inner">
         <div class="flip-card-front">
