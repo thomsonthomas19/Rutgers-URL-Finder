@@ -21,6 +21,10 @@ const Navbar = () => {
             <Link to="/search" 
             className={(window.location.pathname === "/search") ? "nav-link active" : "nav-link"}>Search</Link>
           </li>
+          <li className="nav-item">
+            <Link to="/urlcard" 
+            className={(window.location.pathname === "/urlcard") ? "nav-link active" : "nav-link"}>Url Card</Link>
+          </li>
          
         </ul>
       </div>
