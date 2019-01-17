@@ -1,32 +1,44 @@
 import React, { Component } from 'react';
 // taken from pupster
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-// taken from pupster
+// Home
+import Home from './Components/Pages/Home';
+// About
 import About from './Components/Pages/About';
-// taken from pupster
-import Discover from './Components/Pages/Discover';
-// taken from pupster
+// Collections
+import Collections from './Components/Pages/Collections';
+// Search
 import Search from './Components/Pages/Search';
-// taken from pupster
-import Navbar from './Components/Navbar';
+// Navbar
+import Navbar from './Components/Navbar/Navbar';
+// Footer
+import Footer from './Components/Footer/Footer';
 
-import UrlCard from './Components/Pages/UrlCard';
+import Wrapper from './Components/Wrapper';
 import logo from './logo.svg';
 import './App.css';
 
 const App = () => {
   return (
+ <div>
     <Router>
       <div>
-        <Navbar/>
-        <Route exact path="/" component={About}/>
+        <Navbar>
+
+        </Navbar>
+
+        <Route exact path="/" component={Home}/>
+        <Route exact path="/home" component={Home}/>
         <Route exact path="/about" component={About}/>
-        <Route exact path="/discover" component={Discover}/>
+        <Route exact path="/collections" component={Collections}/>
         <Route exact path="/search" component={Search}/>
-        <Route exact path="/urlcard" component={UrlCard}/>
       </div>
     </Router>
+    <Footer>
+    </Footer>
+</div>
   )
 }
+
 
 export default App;

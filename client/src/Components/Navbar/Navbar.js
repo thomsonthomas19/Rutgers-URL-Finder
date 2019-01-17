@@ -1,6 +1,7 @@
 // taken from pupster
 import React from 'react';
 import {Link} from 'react-router-dom';
+import "../Navbar/Navbar.css";
 
 
 const Navbar = () => {
@@ -11,20 +12,24 @@ const Navbar = () => {
         <ul className="navbar-nav">
           <li className="nav-item">
             <Link to="/about" 
-            className={window.location.pathname === "/about" ? "nav-link active" : "nav-link"}>About</Link>
+            className={window.location.pathname === "/home" ? "nav-link active" : "nav-link"}>Home</Link>
           </li>
           <li className="nav-item">
-           <Link to="/discover" 
-            className={(window.location.pathname === "/discover") ? "nav-link active" : "nav-link"}>Discover</Link>
+           <Link to="/about" 
+            className={(window.location.pathname === "/about") ? "nav-link active" : "nav-link"}>About</Link>
+          </li>
+          <li className="nav-item">
+           <Link to="/collections" 
+            className={(window.location.pathname === "/collections") ? "nav-link active" : "nav-link"}>Collections</Link>
           </li>
           <li className="nav-item">
             <Link to="/search" 
             className={(window.location.pathname === "/search") ? "nav-link active" : "nav-link"}>Search</Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link to="/urlcard" 
             className={(window.location.pathname === "/urlcard") ? "nav-link active" : "nav-link"}>Url Card</Link>
-          </li>
+          </li> */}
          
         </ul>
       </div>

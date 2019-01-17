@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+}
+
+.Footer {
+  background: #cc0033;
+  height: 142px;
+  align-content: center;
+  text-align: center;
+  padding: 35px;
+}
+
+.page-wrap {
+  min-height: 100%;
+  margin-bottom: -142px;
+}
+
+.page-wrap:after {
+  content: "";
+  display: block;
+}
