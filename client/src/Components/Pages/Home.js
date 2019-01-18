@@ -21,18 +21,20 @@ const styles = {
   }
 }
 
-const About = () => {
+const Home = () => {
   return (
     <div>
-      <div className="jumbotron jumbotron-fluid text-center d-flex align-items-center justify-content-center" style={styles.hero}>
+      <div className="jumbotron jumbotron-fluid text-center" style={styles.hero}>
       {/* <img src={picture}/> */}
-        <h1 className="display-4">Welcome to the Rutgers URL Finder App!</h1>
+        <h1 className="display-4">Accio,URL!</h1>
+        <h2 className="display-8">Rutgers Coding Bootcamp Edition</h2>
       </div>
       <div className="container my-5">
         <div className="row">
           <div className="col-12">
           <div className="welcome text-center d-flex align-items-center justify-content-center" style={styles.h3}>
           <h3>Sup Rutgers Coding Bootcamp Alumni!</h3>
+          {/* homepage landing  */}
           </div>
           </div>
         </div>
@@ -42,4 +44,4 @@ const About = () => {
   }
 
 
-export default About;
+export default Home;
