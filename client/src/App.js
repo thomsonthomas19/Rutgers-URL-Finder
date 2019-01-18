@@ -23,19 +23,18 @@ const App = () => {
  <div>
     <Router>
       <div>
-        <Navbar>
-
-        </Navbar>
-
+        <Navbar/>
         <Route exact path="/" component={Home}/>
         <Route exact path="/home" component={Home}/>
         <Route exact path="/about" component={About}/>
         <Route exact path="/collections" component={Collections}/>
         <Route exact path="/search" component={Search}/>
+  
+
       </div>
+ 
     </Router>
-    <Footer>
-    </Footer>
+    <Footer/>
 </div>
   )
 }

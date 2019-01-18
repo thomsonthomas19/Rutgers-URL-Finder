@@ -11,7 +11,7 @@ const Navbar = () => {
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <Link to="/about" 
+            <Link to="/home" 
             className={window.location.pathname === "/home" ? "nav-link active" : "nav-link"}>Home</Link>
           </li>
           <li className="nav-item">
