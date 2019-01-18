@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// taken from pupster
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 // Home
 import Home from './Components/Pages/Home';

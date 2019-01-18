@@ -15,15 +15,17 @@ module.exports = function(app) {
   // GET route for getting all of the bookmarks
   app.get("/api/bookmarks", function(req, res) {
     var query = {};
-    if (req.query.author_id) {
-      query.AuthorId = req.query.author_id;
+    if (req.query.category_id) {
+      query.CategoryId = req.query.category_id;
     }
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
-    // In this case, just db.Author
-    db.Bookmark.findAll({
+    // In this case, just db.Category
+    db
+      .Bookmark
+      .findAll({
       where: query,
-      include: [db.Author]
+      include: [db.Category]
     }).then(function(dbBookmark) {
       res.json(dbBookmark);
     });
@@ -33,12 +35,14 @@ module.exports = function(app) {
   app.get("/api/bookmarks/:id", function(req, res) {
     // Here we add an "include" property to our options in our findOne query
     // We set the value to an array of the models we want to include in a left outer join
-    // In this case, just db.Author
-    db.Bookmark.findOne({
+    // In this case, just db.Category
+    db
+      .Bookmark
+      .findOne({
       where: {
         id: req.params.id
       },
-      include: [db.Author]
+      include: [db.Category]
     }).then(function(dbBookmark) {
       res.json(dbBookmark);
     });
@@ -46,7 +50,9 @@ module.exports = function(app) {
 
   // Bookmark route for saving a new Bookmark
   app.post("/api/bookmarks", function(req, res) {
-    db.Bookmark.create(req.body).then(function(dbBookmark) {
+    db
+      .Bookmark
+      .create(req.body).then(function(dbBookmark) {
       res.json(dbBookmark);
     });
   });
