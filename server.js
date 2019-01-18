@@ -35,7 +35,7 @@ app.use(express.static("client/public"));
 // =============================================================
 require("./routes/bookmark-api-routes.js")(app);
 require("./routes/category-api-routes.js")(app);
-require("./routes/html-routes.js")(app);
+// require("./routes/html-routes.js")(app);
 
 
 
