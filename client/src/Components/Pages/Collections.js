@@ -21,7 +21,7 @@ const styles = {
   }
 }
 
-const About = () => {
+const Collections = () => {
   return (
     <div>
       <div className="jumbotron jumbotron-fluid text-center" style={styles.hero}>
@@ -34,7 +34,7 @@ const About = () => {
           <div className="col-12">
           <div className="welcome text-center d-flex align-items-center justify-content-center" style={styles.h3}>
           <h3>Sup Rutgers Coding Bootcamp Alumni!</h3>
-          <h4>About Us Page</h4>
+          <h4>A list of all of Our Collections</h4>
           </div>
           </div>
         </div>
@@ -44,4 +44,4 @@ const About = () => {
   }
 
 
-export default About;
+export default Collections;
