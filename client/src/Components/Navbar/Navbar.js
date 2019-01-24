@@ -1,14 +1,24 @@
 // taken from pupster
 import React from 'react';
 import {Link} from 'react-router-dom';
-import "../Navbar/Navbar.css";
+import "../Navbar/Navbar.css";      // Accio Logo
+import logo from "./images/accioLogo.png";
 
+      {/* <div className="collapse navbar-collapse" id="navbarNav"> */}
+      const styles = {
+        logo: {
+          width: 200,
+          padding: 10,
+        }
+      }
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <Link to="/" className="navbar-brand">Accio, URL!</Link>
-      <div className="collapse navbar-collapse" id="navbarNav">
+    <nav className="navbar navbar-expand-lg ">
+      <Link to="/" className="navbar-brand">
+      <img src={logo} style={styles.logo}/> </Link>
+      
+            <div className="" id="navbarNav">
         <ul className="navbar-nav">
           <li className="nav-item">
             <Link to="/home" 
