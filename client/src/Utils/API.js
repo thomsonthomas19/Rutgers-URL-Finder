@@ -16,18 +16,20 @@ export default {
   },
   deleteCollection: function(categoriesId) {
     return axios.delete(`/api/categories/${categoriesId}`)
+  },
+  getSavedBookmarks: function() {
+    return axios.get('/api/bookmarks')
+  },
+  getBookmarkById: function(bookmarksId) {
+    return axios.get(`/api/bookmarks/${bookmarksId}`)
+  },
+  saveBookmark: function(bookmarksData) {
+    return axios.post('/api/bookmarks', bookmarksData)
+  },
+  updateBookmark: function(bookmarksId) {
+    return axios.put(`/api/bookmarks/${bookmarksId}`)
+  },
+  deleteBookmark: function(bookmarksId) {
+    return axios.delete(`/api/bookmarks/${bookmarksId}`)
   }
 }
-
-// axios.get(url, options)
-/* options
-  {
-    params: {
-      q: "harry potter",
-      year: 1999
-    },
-    authorization: {
-      token: "dlkgsdjalkgj4ut30t94ut094u8t"
-    }
-  }
-*/

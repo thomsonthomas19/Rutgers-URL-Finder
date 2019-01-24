@@ -32,10 +32,29 @@ const About = () => {
       <div className="container my-5">
         <div className="row">
           <div className="col-12">
-          <div className="welcome text-center d-flex align-items-center justify-content-center" style={styles.h3}>
-          <h3>Sup Rutgers Coding Bootcamp Alumni!</h3>
-          <h4>About Us Page</h4>
-          </div>
+          <ul className="list-unstyled">
+  <li className="media">
+    <img src="https://via.placeholder.com/64x64" className="mr-3" alt="..."/>
+    <div className="media-body">
+      <h5 className="mt-0 mb-1">List-based media object</h5>
+      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+    </div>
+  </li>
+  <li className="media my-4">
+    <img src="https://via.placeholder.com/64x64" className="mr-3" alt="..."/>
+    <div className="media-body">
+      <h5 className="mt-0 mb-1">List-based media object</h5>
+      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+    </div>
+  </li>
+  <li className="media">
+    <img src="https://via.placeholder.com/64x64" className="mr-3" alt="..."/>
+    <div className="media-body">
+      <h5 className="mt-0 mb-1">List-based media object</h5>
+      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+    </div>
+  </li>
+</ul>
           </div>
         </div>
       </div>
