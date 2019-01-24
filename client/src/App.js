@@ -12,10 +12,13 @@ import Search from './Components/Pages/Search';
 import Navbar from './Components/Navbar/Navbar';
 // Footer
 import Footer from './Components/Footer/Footer';
-
+// Modal
+import Modal from './Components/Modal/Modal';
 import Wrapper from './Components/Wrapper';
 import logo from './logo.svg';
 import './App.css';
+
+
 
 const App = () => {
   return (
@@ -28,8 +31,6 @@ const App = () => {
         <Route exact path="/about" component={About}/>
         <Route exact path="/collections" component={Collections}/>
         <Route exact path="/search" component={Search}/>
-  
-
       </div>
  
     </Router>

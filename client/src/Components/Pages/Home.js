@@ -14,7 +14,7 @@ const styles = {
     backgroundColor: "#cc0033",
     color: "white",
     textShadow: "0 0 10px black",
-    minHeight: "45vh"
+    height: "50px"
   },
   h3: {
     justifyContent: 'center'
@@ -23,12 +23,12 @@ const styles = {
 
 const Home = () => {
   return (
-    <div>
-      <div className="jumbotron jumbotron-fluid text-center" style={styles.hero}>
-      {/* <img src={picture}/> */}
-        <h1 className="display-4">Accio,URL!</h1>
-        <h2 className="display-8">Rutgers Coding Bootcamp Edition</h2>
-      </div>
+//     // // <div>
+    //   {/* <div className="jumbotron jumbotron-fluid text-center" style={styles.hero}> */}
+    //   {/* <img src={picture}/> */}
+    //     {/* <h1 className="display-4">Accio,URL!</h1> */}
+    //     {/* <h2 className="display-8">Rutgers Coding Bootcamp Edition</h2> */}
+    //   </div>
       <div className="container my-5">
         <div className="row">
           <div className="col-12">
@@ -39,7 +39,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </div>
+    // </div>
   )
   }
 
