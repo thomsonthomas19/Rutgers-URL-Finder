@@ -14,10 +14,13 @@ import Collection from './Components/Pages/Collection';
 import Navbar from './Components/Navbar/Navbar';
 // Footer
 import Footer from './Components/Footer/Footer';
-
+// Modal
+import Modal from './Components/Modal/Modal';
 import Wrapper from './Components/Wrapper';
 import logo from './logo.svg';
 import './App.css';
+
+
 
 const App = () => {
   return (

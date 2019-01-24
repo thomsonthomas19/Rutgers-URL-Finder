@@ -2,6 +2,27 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import API from '../../utils/API';
 
+
+
+
+const styles = {
+  hero: {
+    // backgroundImage: `url(${dogpic})`,
+   backgroundSize: "cover",
+    fontFamily: "Abril Fatface",
+     backgroundPosition: "center",
+     backgroundBlendMode: "multiply",
+    backgroundColor: "#cc0033",
+     color: "white",
+     textShadow: "0 0 10px black",
+     height: "50px"
+  },
+  h3: {
+    justifyContent: 'center'
+  }
+}
+
+
 class Saved extends Component {
   state = {
     collections: []
@@ -27,13 +48,15 @@ class Saved extends Component {
       .catch(err => console.log(err));
   }
 
+
   render() {
     console.log(this.state.collections);
 
     return (
       <div>
-        <div className="jumbotron jumbotron-fluid text-center">
-          <h1 className="display-4 text-center">Collections</h1>
+        <div className="jumbotron jumbotron-fluid text-center" style={styles.hero}>
+        <div>
+          <h1 className="display-4">Collections</h1>
         </div>
         <div className="container-fluid">
         <div className="text-center">
@@ -44,7 +67,7 @@ class Saved extends Component {
         </div>
           <div className="row align-items-stretch">
             {/* use ternary to check if collections are in state */}
-
+            
             {!this.state.collections.length
               ? (
                 <h2 className="text-center">Collections Incoming</h2>
