@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import API from '../../utils/API';
 
 
@@ -27,14 +28,16 @@ class Saved extends Component {
     collections: []
   }
 
-  // retrieve saved books on load
+  // retrieve saved collections on load
   componentDidMount() {
     this.getCollections();
   }
 
+
+
   getCollections = () => {
     API.getSavedCollections()
-      .then(({data}) => this.setState({collections: data}))
+      .then(({ data }) => this.setState({ collections: data }))
       .catch(err => console.log(err));
   }
 
@@ -47,6 +50,8 @@ class Saved extends Component {
 
 
   render() {
+    console.log(this.state.collections);
+
     return (
       <div>
         <div className="jumbotron jumbotron-fluid text-center" style={styles.hero}>
@@ -54,14 +59,19 @@ class Saved extends Component {
           <h1 className="display-4">Collections</h1>
           <hr/>
         </div>
+        <div className="container-fluid">
+        <div className="text-center">
+          <form action="/action_page.php">
+            Add New Category: <input type="text" name="FirstName" placeholder=" e.g. Express"/><br/>
+            <input type="submit" value="Submit"/>
+          </form>
         </div>
-        <div>
           <div className="row align-items-stretch">
             {/* use ternary to check if collections are in state */}
             
             {!this.state.collections.length
               ? (
-                <h2 className="text-center">This means it failed</h2>
+                <h2 className="text-center">Collections Incoming</h2>
               )
               : this
                 .state
@@ -70,15 +80,17 @@ class Saved extends Component {
                   return (
                     <div className="col-12" key={collection.id}>
                       <div className="row ml-3">
+                        <Link to={"/collections/" + collection.id}>
                         <h5 >{collection.Category}</h5>
-                          <div className="btn-group" role="group">
-                            <button type="button" className="btn" onClick={() => this.deleteCollection(collection.id)}>x</button>
-                          </div>
+                        </Link>
+                        <div className="btn-group" role="group">
+                          <button type="button" className="btn" onClick={() => this.deleteCollection(collection.id)}>x</button>
+                        </div>
                       </div>
                     </div>
                   )
                 })
-}
+            }
           </div>
         </div>
       </div>

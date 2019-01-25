@@ -8,6 +8,8 @@ import About from './Components/Pages/About';
 import Collections from './Components/Pages/Collections';
 // Search
 import Search from './Components/Pages/Search';
+
+import Collection from './Components/Pages/Collection';
 // Navbar
 import Navbar from './Components/Navbar/Navbar';
 // Footer
@@ -31,6 +33,9 @@ const App = () => {
         <Route exact path="/about" component={About}/>
         <Route exact path="/collections" component={Collections}/>
         <Route exact path="/search" component={Search}/>
+        <Route exact path="/collections/:id" component={Collection}/>
+  
+
       </div>
  
     </Router>
