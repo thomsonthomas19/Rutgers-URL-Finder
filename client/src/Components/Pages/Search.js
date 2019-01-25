@@ -12,13 +12,13 @@ const styles = {
   hero: {
     // backgroundImage: `url(${dogpic})`,
     backgroundSize: "cover",
-    fontFamily: "Abril Fatface",
+    fontFamily: "Georgia",
     backgroundPosition: "center",
     backgroundBlendMode: "multiply",
-    backgroundColor: "#cc0033",
-    color: "white",
-    textShadow: "0 0 10px black",
-    height: "50px"
+    backgroundColor: "white",
+    color: "#cc0033",
+    textShadow: "0 0 100px grey",
+    height: "50px",
   },
   h3: {
     justifyContent: 'center'
@@ -37,6 +37,7 @@ const Search = () => {
       <div className="jumbotron jumbotron-fluid text-center" style={styles.hero}>
         {/* <img src={picture}/> */}
         <h1 className="display-4">Search</h1>
+        <hr/>
         {/* <h2 className="display-8">Rutgers Coding Bootcamp Edition</h2> */}
       </div>
       <div className="container my-5">

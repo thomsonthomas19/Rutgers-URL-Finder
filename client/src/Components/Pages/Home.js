@@ -8,13 +8,13 @@ const styles = {
   hero: {
     // backgroundImage: `url(${dogpic})`,
     backgroundSize: "cover",
-    fontFamily: "Abril Fatface",
+    fontFamily: "Georgia",
     backgroundPosition: "center",
     backgroundBlendMode: "multiply",
-    backgroundColor: "#cc0033",
-    color: "white",
-    textShadow: "0 0 10px black",
-    height: "50px"
+    backgroundColor: "white",
+    color: "#cc0033",
+    textShadow: "0 0 100px grey",
+    height: "50px",
   },
   h3: {
     justifyContent: 'center'
@@ -29,17 +29,17 @@ const Home = () => {
     //     {/* <h1 className="display-4">Accio,URL!</h1> */}
     //     {/* <h2 className="display-8">Rutgers Coding Bootcamp Edition</h2> */}
     //   </div>
-      <div className="container my-5">
-        <div className="row">
-          <div className="col-12">
-          <div className="welcome text-center d-flex align-items-center justify-content-center" style={styles.h3}>
-          <h3>Sup Rutgers Coding Bootcamp Alumni!</h3>
-          {/* homepage landing  */}
-          </div>
-          </div>
+    <div>
+         <div className="jumbotron jumbotron-fluid text-center" style={styles.hero}>
+        <div>
+          <h1 className="display-4">Home</h1>
+          <hr/>
         </div>
-      </div>
-    // </div>
+        </div>
+     
+          {/* homepage landing  */}
+    
+ </div>
   )
   }
 

@@ -7,14 +7,14 @@ import API from '../../utils/API';
 const styles = {
   hero: {
     // backgroundImage: `url(${dogpic})`,
-   backgroundSize: "cover",
-    fontFamily: "Abril Fatface",
-     backgroundPosition: "center",
-     backgroundBlendMode: "multiply",
-    backgroundColor: "#cc0033",
-     color: "white",
-     textShadow: "0 0 10px black",
-     height: "50px"
+    backgroundSize: "cover",
+    fontFamily: "Georgia",
+    backgroundPosition: "center",
+    backgroundBlendMode: "multiply",
+    backgroundColor: "white",
+    color: "#cc0033",
+    textShadow: "0 0 100px grey",
+    height: "50px",
   },
   h3: {
     justifyContent: 'center'
@@ -52,6 +52,7 @@ class Saved extends Component {
         <div className="jumbotron jumbotron-fluid text-center" style={styles.hero}>
         <div>
           <h1 className="display-4">Collections</h1>
+          <hr/>
         </div>
         </div>
         <div>
