@@ -5,22 +5,22 @@ import API from '../../utils/API';
 
 
 
-const styles = {
-  hero: {
-    // backgroundImage: `url(${dogpic})`,
-    backgroundSize: "cover",
-    fontFamily: "Georgia",
-    backgroundPosition: "center",
-    backgroundBlendMode: "multiply",
-    backgroundColor: "white",
-    color: "#cc0033",
-    textShadow: "0 0 100px grey",
-    height: "50px",
-  },
-  h3: {
-    justifyContent: 'center'
-  }
-}
+// const styles = {
+//   hero: {
+//     // backgroundImage: `url(${dogpic})`,
+//     backgroundSize: "cover",
+//     fontFamily: "Georgia",
+//     backgroundPosition: "center",
+//     backgroundBlendMode: "multiply",
+//     backgroundColor: "white",
+//     color: "#cc0033",
+//     textShadow: "0 0 100px grey",
+//     height: "50px",
+//   },
+//   h3: {
+//     justifyContent: 'center'
+//   }
+// }
 
 
 class Saved extends Component {
@@ -54,7 +54,7 @@ class Saved extends Component {
 
     return (
       <div>
-        <div className="jumbotron jumbotron-fluid text-center" style={styles.hero}>
+        <div className="jumbotron jumbotron-fluid text-center" >
         <div>
           <h1 className="display-4">Collections</h1>
           <hr/>
@@ -93,6 +93,7 @@ class Saved extends Component {
             }
           </div>
         </div>
+      </div>
       </div>
 
     )

@@ -44,15 +44,15 @@ const Search = () => {
         <div className="row">
           <div className="col-12">
             <div className="welcome text-center " style={styles.h3}>
-              <h3> Rutgers Coding Bootcamp Alumni!</h3>
+              <h3> Search the Collections</h3>
             </div>
           </div>
         </div>
         {/*below the header  */}
         {/* body of the page here */}
         <div className="body">
-          <h4>Search for some URLs:</h4>
-          <p>hi</p>
+          {/* <h4>Search for some URLs:</h4>
+          <p>hi</p> */}
         </div>
         {/* above the footer */}
       </div>
