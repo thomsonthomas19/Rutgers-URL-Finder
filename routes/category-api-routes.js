@@ -6,6 +6,10 @@ module.exports = function(app) {
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Bookmark
     db.Category.findAll({
+      order: [
+        // Will escape title and validate DESC against a list of valid direction parameters
+        ['id', 'ASC']
+      ],
       include: [db.Bookmark]
     }).then(function(dbCategory) {
       res.json(dbCategory);

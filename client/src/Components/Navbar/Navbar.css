@@ -17,3 +17,7 @@ body {
   font-size:20px;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.white-link:link, .white-link:active, .white-link:visited, .white-link:hover {
+  color: white;
+}

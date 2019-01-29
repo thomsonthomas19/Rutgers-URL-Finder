@@ -121,8 +121,7 @@ const Footer = () => (
             </ul>
           </div>
         </div>
-        <hr>
-        </hr>
+        <hr style={{borderColor: "#cc0033"}}/>
       </div>
       {/* copyright */}
       <div className="container">

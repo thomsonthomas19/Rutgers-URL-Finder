@@ -14,7 +14,7 @@ import logo from "./images/accioLogo.png";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg ">
+    <nav className="navbar navbar-expand-lg " style={{zIndex: "4"}}>
       <Link to="/" className="navbar-brand">
       <img src={logo} style={styles.logo}/> </Link>
       
@@ -22,19 +22,19 @@ const Navbar = () => {
         <ul className="navbar-nav">
           <li className="nav-item">
             <Link to="/home" 
-            className={window.location.pathname === "/home" ? "nav-link active" : "nav-link"}>Home</Link>
+            className="nav-link white-link">Home</Link>
           </li>
           <li className="nav-item">
            <Link to="/about" 
-            className={(window.location.pathname === "/about") ? "nav-link active" : "nav-link"}>About</Link>
+            className="nav-link white-link">About</Link>
           </li>
           <li className="nav-item">
            <Link to="/collections" 
-            className={(window.location.pathname === "/collections") ? "nav-link active" : "nav-link"}>Collections</Link>
+            className="nav-link white-link">Collections</Link>
           </li>
           <li className="nav-item">
-            <Link to="/search" 
-            className={(window.location.pathname === "/search") ? "nav-link active" : "nav-link"}>Search</Link>
+            <Link to="/bookmarks/new" 
+            className="nav-link white-link">New Bookmark</Link>
           </li>
           {/* <li className="nav-item">
             <Link to="/urlcard" 
