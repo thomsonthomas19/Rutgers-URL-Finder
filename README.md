@@ -1,6 +1,6 @@
 # Accio, URL!
 ### Rutgers Coding Bootcamp Edition equips all of our fellow Full Stack Rutgers Coding Bootcamp
-### classmakes with fundamental links that were shared on our RUTSOM201807FSF4 Slack channel
+### classmates with fundamental links that were shared on our RUTSOM201807FSF4 Slack channel
 ### throughout the 24 week Full Stack Coding Bootcamp.
 `` HTML5 ``
 `` CSS3 ``
