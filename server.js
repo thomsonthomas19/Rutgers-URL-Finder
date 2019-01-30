@@ -25,6 +25,8 @@ app.use(express.json());
 // Static directory
 app.use(express.static("client/build"));
 
+
+
 // We need to use sessions to keep track of our user's login status
 // app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 // app.use(passport.initialize());
@@ -37,7 +39,9 @@ require("./routes/bookmark-api-routes.js")(app);
 require("./routes/category-api-routes.js")(app);
 // require("./routes/html-routes.js")(app);
 
-
+app.get("*", function(req,res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 
 // ======================================================
 // Syncing our sequelize models and then starting our Express app
