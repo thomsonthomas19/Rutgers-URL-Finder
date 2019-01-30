@@ -23,7 +23,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Static directory
-app.use(express.static("client/build"));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 
 
@@ -38,6 +40,11 @@ app.use(express.static("client/build"));
 require("./routes/bookmark-api-routes.js")(app);
 require("./routes/category-api-routes.js")(app);
 // require("./routes/html-routes.js")(app);
+
+router.use(function(req,res) {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
+
 
 app.get("*", function(req,res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
