@@ -44,6 +44,7 @@ const App = () => {
       </div>
  
     </Router>
+  
     <Footer/>
 </div>
   )

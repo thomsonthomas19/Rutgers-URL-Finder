@@ -12,7 +12,7 @@ const Footer = () => (
             {/* about section with paragraph intro */}
             <h6>About</h6>
             <p className="text-justify">
-            <i> Accio, URL!</i> <strong> Rutgers Coding Bootcamp Edition</strong> equips all of our fellow Full Stack Rutgers Coding Bootcamp classmates with fundamental links that were shared on our RUTSOM201807FSF4 slack channel throught the 24 week Full Stack Coding Bootcamp.
+            <i> Accio, URL!</i> <strong> Rutgers Coding Bootcamp Edition</strong> equips all of our fellow Full Stack Rutgers Coding Bootcamp classmates with fundamental links that were shared on our RUTSOM201807FSF4 slack channel throughout the 24 week Full Stack Coding Bootcamp.
             <br>
             </br>
             <br>
@@ -104,20 +104,20 @@ const Footer = () => (
             <h6>Quick Links</h6>
             <ul className='footer-links'>
               <li>
-                <a href="/About">About Us</a>
+                <a href="/Home">Home</a>
               </li>
               <li>
-                <a href="/About">Contact Us</a>
+                <a href="/About">About</a>
               </li>
               <li>
-                <a href="/About">Contribute</a>
+                <a href="/Collections">Collections</a>
               </li>
               <li>
-                <a href="/About">Privacy Policy</a>
+                <a href="/Search">Search</a>
               </li>
-              <li>
-                <a href="/About">Sitemap</a>
-              </li>
+              {/* <li>
+                <a href="/Bookmark">Sitemap</a>
+              </li> */}
             </ul>
           </div>
         </div>
