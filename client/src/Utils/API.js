@@ -3,6 +3,7 @@ import axios from 'axios';
 
 export default {
   getSavedCollections: function() {
+    console.log("API GET WORKING");
     return axios.get('/api/categories')
   },
   getCollectionById: function(categoriesId) {

@@ -89,6 +89,14 @@ class Saved extends Component {
     });
   };
 
+  resetFields = () => {
+    this.setState({
+      title: "",
+      link: "",
+      description: ""
+    })
+  }
+
   handleFormSubmit = event => {
     event.preventDefault();
     if (this.state.title && this.state.link && this.state.description) {
@@ -101,6 +109,8 @@ class Saved extends Component {
       .then(this.getCollection)
       .catch(err => console.log(err))
       .then(this.closeModal)
+      .catch(err => console.log(err))
+      .then(this.resetFields)
       .catch(err => console.log(err));
       
       // .catch(err => console.log(err));
@@ -164,8 +174,8 @@ class Saved extends Component {
             </form>
           </Modal>
         </div>
-        <div className="jumbotron jumbotron-fluid text-center mb-2">
-          <h1 className="display-4 text-center">{this.state.collections.Category}</h1>
+        <div className="jumbotron jumbotron-fluid text-center mb-2"  style={{backgroundColor: "white"}}>
+          <h1 className="display-4 text-center"  style={{color: "#cc0033"}}>{this.state.collections.Category}</h1>
         </div>
         {/* OPEN MODAL BUTTON */}
         <div style={{width: "100%"}} className="text-right">

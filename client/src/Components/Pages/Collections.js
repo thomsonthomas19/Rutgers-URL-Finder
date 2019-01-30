@@ -8,14 +8,13 @@ import { Input, FormBtn } from "../Form";
 const styles = {
   hero: {
     // backgroundImage: `url(${dogpic})`,
-   backgroundSize: "cover",
-    fontFamily: "Abril Fatface",
-     backgroundPosition: "center",
-     backgroundBlendMode: "multiply",
-    backgroundColor: "#cc0033",
-     color: "white",
-     textShadow: "0 0 10px black",
-     height: "50px"
+    fontFamily: "Georgia",
+    backgroundPosition: "center",
+    backgroundBlendMode: "multiply",
+    backgroundColor: "white",
+    color: "#cc0033",
+    textShadow: "0 0 100px grey",
+    height: "50px",
   },
   h3: {
     justifyContent: 'center'
@@ -53,11 +52,22 @@ class Saved extends Component {
         Category: this.state.category
       })
         .then(res => this.getCollections())
+        .catch(err => console.log(err))
+        .then(this.resetFields)
         .catch(err => console.log(err));
+
+        
     }
   };
 
+  resetFields = () => {
+    this.setState({
+      category: ""
+    })
+  }
+
   getCollections = () => {
+    console.log("GET WORKING");
     API.getSavedCollections()
       .then(({ data }) => this.setState({ collections: data }))
       .catch(err => console.log(err));
@@ -76,9 +86,9 @@ class Saved extends Component {
 
     return (
       <div>
-        <div className="jumbotron jumbotron-fluid text-center" >
+        <div className="jumbotron jumbotron-fluid text-center" style={{backgroundColor: "white"}} >
         <div>
-          <h1 className="display-4 mb-1">Collections</h1>
+          <h1 className="display-4 mb-1" style={{color: "#cc0033"}}>Collections</h1>
         </div>
         <hr/>
         <div className="container-fluid mt-4">

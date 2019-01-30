@@ -49,6 +49,15 @@ class Saved extends Component {
     });
   };
 
+  resetFields = () => {
+    this.setState({
+      title: "",
+      link: "",
+      description: "",
+      collection: ""
+    })
+  }
+
   handleFormSubmit = event => {
     event.preventDefault();
     if (this.state.title && this.state.link && this.state.description && this.state.collection) {
@@ -58,8 +67,8 @@ class Saved extends Component {
         description: this.state.description,
         CategoryId: this.state.collection
       })
-        // .then(res => this.getCollections())
-        // .catch(err => console.log(err));
+        .then(this.resetFields)
+        .catch(err => console.log(err));
     }
   };
 
@@ -75,9 +84,9 @@ class Saved extends Component {
 
     return (
       <div>
-        <div className="jumbotron jumbotron-fluid" >
+        <div className="jumbotron jumbotron-fluid" style={{backgroundColor: "white"}} >
           <div>
-            <h1 className="display-4 text-center">Add a Bookmark</h1>
+            <h1 className="display-4 text-center" style={{color: "#cc0033"}}>Add a Bookmark</h1>
           </div>
           <hr />
           <div className="container-fluid">

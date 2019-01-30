@@ -5,6 +5,7 @@ module.exports = function(app) {
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Bookmark
+    console.log("api route 1");
     db.Category.findAll({
       order: [
         // Will escape title and validate DESC against a list of valid direction parameters
@@ -12,6 +13,7 @@ module.exports = function(app) {
       ],
       include: [db.Bookmark]
     }).then(function(dbCategory) {
+      console.log("api route 2");
       res.json(dbCategory);
     });
   });
