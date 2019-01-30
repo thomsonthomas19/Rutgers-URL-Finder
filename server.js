@@ -41,7 +41,7 @@ require("./routes/bookmark-api-routes.js")(app);
 require("./routes/category-api-routes.js")(app);
 // require("./routes/html-routes.js")(app);
 
-router.use(function(req,res) {
+app.use(function(req,res) {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
