@@ -21,3 +21,7 @@ body {
 a:link, a:active, a:visited, a:hover {
   color: white;
 }
+
+.white-link:link, .white-link:active, .white-link:visited, .white-link:hover {
+  color: white;
+}

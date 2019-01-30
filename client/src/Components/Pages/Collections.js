@@ -1,31 +1,36 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import API from '../../utils/API';
+import { Input, FormBtn } from "../Form";
 
 
 
-
-// const styles = {
-//   hero: {
-//     // backgroundImage: `url(${dogpic})`,
-//     backgroundSize: "cover",
-//     fontFamily: "Georgia",
-//     backgroundPosition: "center",
-//     backgroundBlendMode: "multiply",
-//     backgroundColor: "white",
-//     color: "#cc0033",
-//     textShadow: "0 0 100px grey",
-//     height: "50px",
-//   },
-//   h3: {
-//     justifyContent: 'center'
-//   }
-// }
+const styles = {
+  hero: {
+    // backgroundImage: `url(${dogpic})`,
+    fontFamily: "Georgia",
+    backgroundPosition: "center",
+    backgroundBlendMode: "multiply",
+    backgroundColor: "white",
+    color: "#cc0033",
+    textShadow: "0 0 100px grey",
+    height: "50px",
+  },
+  h3: {
+    justifyContent: 'center'
+  },
+  btncolor: {
+    backgroundColor: "#cc0033",
+    color: "white",
+    borderRadius: "10px"
+  }
+}
 
 
 class Saved extends Component {
   state = {
-    collections: []
+    collections: [],
+    category: ""
   }
 
   // retrieve saved collections on load
@@ -33,9 +38,36 @@ class Saved extends Component {
     this.getCollections();
   }
 
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
 
+  handleFormSubmit = event => {
+    event.preventDefault();
+    if (this.state.category) {
+      API.saveCollection({
+        Category: this.state.category
+      })
+        .then(res => this.getCollections())
+        .catch(err => console.log(err))
+        .then(this.resetFields)
+        .catch(err => console.log(err));
+
+        
+    }
+  };
+
+  resetFields = () => {
+    this.setState({
+      category: ""
+    })
+  }
 
   getCollections = () => {
+    console.log("GET WORKING");
     API.getSavedCollections()
       .then(({ data }) => this.setState({ collections: data }))
       .catch(err => console.log(err));
@@ -54,17 +86,13 @@ class Saved extends Component {
 
     return (
       <div>
-        <div className="jumbotron jumbotron-fluid text-center" >
+        <div className="jumbotron jumbotron-fluid text-center" style={{backgroundColor: "white"}} >
         <div>
-          <h1 className="display-4">Collections</h1>
-          <hr/>
+          <h1 className="display-4 mb-1" style={{color: "#cc0033"}}>Collections</h1>
         </div>
-        <div className="container-fluid">
+        <hr/>
+        <div className="container-fluid mt-4">
         <div className="text-center">
-          <form action="/action_page.php">
-            Add New Category: <input type="text" name="FirstName" placeholder=" e.g. Express"/><br/>
-            <input type="submit" value="Submit"/>
-          </form>
         </div>
           <div className="row align-items-stretch">
             {/* use ternary to check if collections are in state */}
@@ -79,12 +107,12 @@ class Saved extends Component {
                 .map(collection => {
                   return (
                     <div className="col-12" key={collection.id}>
-                      <div className="row ml-3">
-                        <Link to={"/collections/" + collection.id}>
-                        <h5 >{collection.Category}</h5>
+                      <div className="row ml-3 my-1">
+                        <Link to={"/collections/id/" + collection.id} className="each-link-css-no-bs ml-auto">
+                        <h5>{collection.Category}</h5>
                         </Link>
-                        <div className="btn-group" role="group">
-                          <button type="button" className="btn" onClick={() => this.deleteCollection(collection.id)}>x</button>
+                        <div className="btn-group mr-auto ml-5" role="group">
+                          <button type="button" className="btn mr-auto px-2 py-1" style={{color: "#e9ecef", backgroundColor: "#cc0033", borderRadius: "13px"}} onClick={() => this.deleteCollection(collection.id)}>ꭙ</button>
                         </div>
                       </div>
                     </div>
@@ -92,6 +120,22 @@ class Saved extends Component {
                 })
             }
           </div>
+          <hr/>
+          <form style={{width: "74%", marginLeft: "13%", marginRight: "13%"}}>
+          <h2 className="text-center mt-2 mb-2">Add New Collection:</h2>
+              <Input
+                value={this.state.category}
+                onChange={this.handleInputChange}
+                name="category"
+                placeholder=" e.g. Express"
+              />
+              <FormBtn
+                disabled={!(this.state.category)}
+                onClick={this.handleFormSubmit}
+              >
+                Submit Collection
+              </FormBtn>
+            </form>
         </div>
       </div>
       </div>

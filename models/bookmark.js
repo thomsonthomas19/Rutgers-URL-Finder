@@ -26,7 +26,7 @@ module.exports = function(sequelize, DataTypes) {
     // A Bookmark can't be created without an Category due to the foreign key constraint
     Bookmark.belongsTo(models.Category, {
       foreignKey: {
-        allowNull: false
+        allowNull: true
       }
     });
   };

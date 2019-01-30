@@ -4,13 +4,13 @@ import "../Footer/Footer.css";
 
 
 const Footer = () => (
-  <div className="Footer">
+  <div className="Footer" style={{bottom: "0"}}>
     <div className="site-footer">
-      <div className="container">
-        <div className="row">
-          <div className="col-sm-12 col-md-6">
+      {/* <div className="container"> */}
+        {/* <div className="row"> */}
+          {/* <div className="col-sm-12 col-md-6"> */}
             {/* about section with paragraph intro */}
-            <h6>About</h6>
+            {/* <h6>About</h6>
             <p className="text-justify">
             <i> Accio, URL!</i> <strong> Rutgers Coding Bootcamp Edition</strong> equips all of our fellow Full Stack Rutgers Coding Bootcamp classmates with fundamental links that were shared on our RUTSOM201807FSF4 slack channel throughout the 24 week Full Stack Coding Bootcamp.
             <br>
@@ -28,10 +28,10 @@ const Footer = () => (
             
 
          
-  </p>
-          </div>
+  </p> */}
+          {/* </div> */}
           {/* UL links to collections */}
-          <div className="col-xs-6 col-md-3">
+          {/* <div className="col-xs-6 col-md-3">
             <h6>Collections</h6>
             <ul className="footer-links">
               <li>
@@ -98,9 +98,9 @@ const Footer = () => (
                 <a href="https://www.w3schools.com/html/html_intro.asp">20-panopto</a>
               </li>
             </ul>
-          </div>
+          </div> */}
           {/* list of different pages on site */}
-          <div className="col-xs-6 col-md-3">
+          {/* <div className="col-xs-6 col-md-3">
             <h6>Quick Links</h6>
             <ul className='footer-links'>
               <li>
@@ -114,22 +114,24 @@ const Footer = () => (
               </li>
               <li>
                 <a href="/Search">Search</a>
-              </li>
+              </li> */}
               {/* <li>
                 <a href="/Bookmark">Sitemap</a>
               </li> */}
-            </ul>
-          </div>
-        </div>
-        <hr>
-        </hr>
-      </div>
+            {/* </ul>
+          </div> */}
+        {/* </div> */}
+        {/* <hr style={{borderColor: "#cc0033"}}/>
+      </div> */}
       {/* copyright */}
-      <div className="container">
-        <div className="col-md-8 col-sm-6 col-xs-12">
-          <p className='copyright-text'>Copyright &copy; 2019 All Rights Reserved by <a href='#'>Chelsea & Thomson</a>.
+      <div>
+      <p className='text-center' style={{fontSize: "1rem"}}>Copyright &copy; 2019 All Rights Reserved by <a href='#'>Chelsea & Thomson</a>.
   </p>
-        </div>
+      </div>
+      {/* <div className="container"> */}
+        {/* <div className="col-md-8 col-sm-6 col-xs-12 text-center"> */}
+          
+        {/* </div> */}
         {/* social icons
         <div className="col-md-4 col-sm-6 col-xs-12">
           <ul className="social-icons">
@@ -147,7 +149,7 @@ const Footer = () => (
             </li>
           </ul>
         </div> */}
-      </div>
+      {/* </div> */}
     </div>
 
   </div>

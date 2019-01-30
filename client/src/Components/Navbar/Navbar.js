@@ -17,27 +17,23 @@ import logo from "./images/accioLogo.png";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg ">
+    <nav className="navbar navbar-expand-lg " style={{zIndex: "4"}}>
       <Link to="/" className="navbar-brand">
       <img src={logo} style={styles.link}/>Accio,URL! </Link>
       
             <div className="" id="navbarNav">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <Link to="/home" 
-            className="nav-link">Home</Link>
-          </li>
-          <li className="nav-item">
            <Link to="/about" 
-            className="nav-link">About</Link>
+            className="nav-link white-link">About</Link>
           </li>
           <li className="nav-item">
            <Link to="/collections" 
-            className="nav-link">Collections</Link>
+            className="nav-link white-link">Collections</Link>
           </li>
           <li className="nav-item">
-            <Link to="/search" 
-            className="nav-link">Search</Link>
+            <Link to="/bookmarks/new" 
+            className="nav-link white-link">New Bookmark</Link>
           </li>
           {/* <li className="nav-item">
             <Link to="/urlcard" 
