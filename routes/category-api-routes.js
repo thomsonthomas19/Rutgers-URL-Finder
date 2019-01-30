@@ -43,6 +43,7 @@ module.exports = function(app) {
       }
     }).then(function(dbCategory) {
       res.json(dbCategory);
+      // res.json({status:'ok'})
     });
   });
 

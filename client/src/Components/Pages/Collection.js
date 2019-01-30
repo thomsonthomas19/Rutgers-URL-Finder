@@ -97,9 +97,11 @@ class Saved extends Component {
         link: this.state.link,
         description: this.state.description,
         CategoryId: this.props.match.params.id
-      });
-      this.closeModal();
-      this.getCollection();
+      })
+      .then(this.getCollection)
+      .catch(err => console.log(err))
+      .then(this.closeModal)
+      .catch(err => console.log(err));
       
       // .catch(err => console.log(err));
     }
@@ -162,16 +164,18 @@ class Saved extends Component {
             </form>
           </Modal>
         </div>
-        <div className="jumbotron jumbotron-fluid text-center">
+        <div className="jumbotron jumbotron-fluid text-center mb-2">
           <h1 className="display-4 text-center">{this.state.collections.Category}</h1>
         </div>
         {/* OPEN MODAL BUTTON */}
+        <div style={{width: "100%"}} className="text-right">
         <button
-          style={{ float: "right", marginBottom: 10, backgroundColor: "#cc0033", color: "white", border: "none", borderRadius: "5px" }}
-          className="my-1"
+          style={{backgroundColor: "#cc0033", color: "white", border: "none", borderRadius: "5px", marginRight: "5%", marginLeft: "auto"}}
+          className="my-2"
           onClick={this.openModal}>
           Add Bookmark to {this.state.collections.Category}
         </button>
+        </div>
         <div className="container-fluid" style={{ width: "90%", marginLeft: "5%", marginRight: "5%" }}>
           <div className="row text-center">
 
