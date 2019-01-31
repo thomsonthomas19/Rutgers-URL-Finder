@@ -39,6 +39,7 @@ const App = () => {
         <Route exact path="/collections/id/:id" component={Collection}/>
         <Route exact path="/bookmarks/new" component={NewBookmark}/>
         <Route exact path="/bookmarks/id/:id" component={Bookmark}/>
+
   
 
       </div>

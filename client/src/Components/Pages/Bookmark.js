@@ -49,14 +49,14 @@ class Saved extends Component {
           <Link className="each-link-css-no-bs mb-3" style={{ fontSize: "1rem", marginTop: "3rem", marginLeft: "5%" }} to={"/collections/id/" + this.state.bookmarks.Category.id}>🠐 Back to {this.state.bookmarks.Category.Category}</Link>
         }
 
-        <div style={{ width: "100%" }} className="text-right">
+        {/* <div style={{ width: "100%" }} className="text-right">
           <button
             style={{ backgroundColor: "#cc0033", color: "white", border: "none", borderRadius: "5px", marginRight: "5%", marginLeft: "auto" }}
             className="my-2"
             onClick={() => this.deleteBookmark(this.props.match.params.id)}>
             Delete Bookmark
           </button>
-        </div>
+        </div> */}
 
       </div>
 
