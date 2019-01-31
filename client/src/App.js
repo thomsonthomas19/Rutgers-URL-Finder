@@ -39,10 +39,7 @@ const App = () => {
         <Route exact path="/collections/id/:id" component={Collection}/>
         <Route exact path="/bookmarks/new" component={NewBookmark}/>
         <Route exact path="/bookmarks/id/:id" component={Bookmark}/>
-        <Route
-            render={() => <h1 className="text-center">Where are you?
-            <span role="img">💩</span>
-          </h1>}/>
+
   
 
       </div>
