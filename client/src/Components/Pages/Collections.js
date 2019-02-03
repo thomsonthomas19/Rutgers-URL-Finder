@@ -112,7 +112,7 @@ class Saved extends Component {
                         <h5>{collection.Category}</h5>
                         </Link>
                         <div className="btn-group mr-auto ml-5" role="group">
-                          <button type="button" className="btn mr-auto px-2 py-1" style={{color: "#e9ecef", backgroundColor: "#cc0033", borderRadius: "13px"}} onClick={() => this.deleteCollection(collection.id)}>ꭙ</button>
+                          {/* <button type="button" className="btn mr-auto px-2 py-1" style={{color: "#e9ecef", backgroundColor: "#cc0033", borderRadius: "13px"}} onClick={() => this.deleteCollection(collection.id)}>ꭙ</button> */}
                         </div>
                       </div>
                     </div>
