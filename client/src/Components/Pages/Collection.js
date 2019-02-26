@@ -199,6 +199,7 @@ class Saved extends Component {
                 .collections
                 .Bookmarks
                 .map(bookmark => {
+                  // this is the flip card information
                   return (
                     <div className="flip-card" key={bookmark.id}>
                       <div className="flip-card-inner">
