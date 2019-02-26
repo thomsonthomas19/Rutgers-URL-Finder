@@ -213,7 +213,8 @@ class Saved extends Component {
                           <Link className="each-link-css-no-bs" style={{ fontSize: "1rem", marginTop: "0.5rem" }} to={"/bookmarks/id/" + bookmark.id}><p style={{ fontSize: "0.9rem", margin: "0" }}>View Full</p></Link>
                           </div>
                           <div className="col-6 text-center">
-                          <button type="button" className="btn mr-auto px-2 py-0" style={{color: "#e9ecef", backgroundColor: "#cc0033", borderRadius: "13px"}} onClick={() => this.deleteBookmark(bookmark.id)}>ꭙ</button></div>
+                          {/* <button type="button" className="btn mr-auto px-2 py-0" style={{color: "#e9ecef", backgroundColor: "#cc0033", borderRadius: "13px"}} onClick={() => this.deleteBookmark(bookmark.id)}>ꭙ</button> */}
+                          </div>
 
                           </div>
 
