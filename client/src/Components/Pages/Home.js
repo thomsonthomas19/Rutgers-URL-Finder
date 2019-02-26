@@ -2,7 +2,7 @@ import React from 'react';
 // import image under images like doge.jpg
 // import dogpic from './images/doge.jpg';
 // import "../About/About.css";
-import picture from './images/accioURL.png';
+import picture from './images/computer.jpg';
 
 const styles = {
   hero: {
@@ -12,25 +12,39 @@ const styles = {
     backgroundPosition: "center",
     backgroundBlendMode: "multiply",
     backgroundColor: "white",
+    backgroundImage: `url(${picture})`,
     color: "#cc0033",
     textShadow: "0 0 100px grey",
     height: "50px",
   },
   h3: {
     justifyContent: 'center'
+  },
+  jumbotron: {
+    backgroundImage: `url(${picture})`,
+    backgroundSize: "cover",
+  },
+  jumbotronContainer: {
+    backgroundColor: "#cc0033",
+    padding: "50px",
+    margins: "50px",
+    opacity: ".9",
+  },
+  submitButton: {
+    textAlign: "center"
   }
 }
 
 const Home = () => {
   return (
-//     // // <div>
+    //     // // <div>
     //   {/* <div className="jumbotron jumbotron-fluid text-center" style={styles.hero}> */}
     //   {/* <img src={picture}/> */}
     //     {/* <h1 className="display-4">Accio,URL!</h1> */}
     //     {/* <h2 className="display-8">Rutgers Coding Bootcamp Edition</h2> */}
     //   </div>
     <div>
-         <div className="jumbotron jumbotron-fluid text-center"  style={{backgroundColor: "white", paddingBottom: "0"}}>
+      {/* <div className="jumbotron jumbotron-fluid text-center"  style={{backgroundColor: "white", paddingBottom: "0"}}>
         <div>
           <h1 className="display-4" style={{color: "#cc0033"}}>Home</h1>
           <hr/>
@@ -41,11 +55,99 @@ const Home = () => {
         </div>
         </div>
      
-          {/* homepage landing  */}
-    
- </div>
+          homepage landing  */}
+
+      <div className="jumbotron jumbotron-fluid" style={styles.jumbotron}>
+        <div className="container">
+          <div className="row">
+            <div className="col-sm-6 col-md-7 col-lg-8 col-sm-push-6 col-md-push-5 col-lg-push-4 bootcamp-content" style={styles.jumbotronContainer}>
+              <h3>RUTGERS CODING BOOTCAMP</h3>
+              <h1 className="display-4">
+                Become a Fullstack Web Developer in 24 Weeks</h1>
+              <p className="lead">Part-Time: August 2018 to February 2019 at the Rutgers Somerset Campus</p>
+              <hr className="my-4">
+              </hr>
+            </div>
+            {/* jumbotron newsletter form */}
+            <form>
+              <div className="col-sm-6 col-md-7 col-lg-8 learnMore-form" style={styles.jumbotronContainer}>
+                <div className="lead_form get-class-collections-info">
+                  <div className="content">
+                    <h2 className="form-get-info-title Title" aria-label="Get Class Information">Newsletter</h2>
+                    <div className="form-get-info">
+                      <form className="email-leads-form">
+                        <div className="form-group row">
+                          <label>
+                            Name:
+              <input type="text" name="name" />
+                          </label>
+                          <label>
+                            eMail:
+              <input type="text" email="email" />
+                          </label>
+                          <input type="submit" value="Submit" className="btn btn-secondary btn-lg btn-block"/>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      {/* summary section */}
+      <section id="summary" className="summary-section">
+        <div className="container">
+          <div class="col-md-10 col-md-offset-1">
+            <h2>Featuring</h2>
+            <ul>
+              <li>
+                "HTML5, CSS3, JavaScript, Java, Node.js, Responsive Design, Heroku, Git, User Authentication, React.js, MyAQL, MongoDB, and more*"
+          </li>
+              <li>
+                Benefit from a wide range of career services to position you for success as you work to advance in your current career or seek a new opportunity.
+          </li>
+              <li>
+                Receive a certificate from New Jersey's #1 Public Institution.
+          </li>
+            </ul>
+            <h5 className="p1">
+              <span className="s1">
+                <b>
+                  * The material covered in this course is subject to change due to market demand.</b></span></h5>
+          </div>
+          <div className="col-md-12 text-center">
+          </div>
+        </div>
+      </section>
+
+
+      <section className="quote-wide">
+        <div className="container" style={{ backgroundColor: "#cc0033" }}>
+          <div className="row">
+            <div className="col-md-12">
+              <div className="fact">
+                <div className="content">
+                  <p>
+                    Web Development is one of the fastest growing careers in today's economy with a projected 27% growth rate by 2024.* Web developers earn a median salary of $63,000 and up to $110,000 per year.† Rutgers Coding Bootcamp was designed to help students to develop the skills and network needed to capitalize on this high-demand career track.</p></div>
+                <div className="source">
+                
+                  <h6>
+                    *Bureau of Labor Statistics.†
+                    <a href="http://money.usnews.com/careers/best-jobs/web-developer/salary" target="_blank">http://money.usnews.com/careers/best-jobs/web-developer/salary</a>
+                    </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
   )
-  }
+}
 
 
 export default Home;
