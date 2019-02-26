@@ -49,8 +49,7 @@ class Saved extends Component {
     event.preventDefault();
     if (this.state.category) {
       API.saveCollection({
-        Category: this.state.category,
-        id: 2
+        Category: this.state.category
       })
         .then(res => this.getCollections())
         .catch(err => console.log(err))
