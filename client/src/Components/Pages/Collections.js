@@ -56,7 +56,7 @@ class Saved extends Component {
         .then(this.resetFields)
         .catch(err => console.log(err));
 
-        
+
     }
   };
 
@@ -86,62 +86,85 @@ class Saved extends Component {
 
     return (
       <div>
-        <div className="jumbotron jumbotron-fluid text-center" style={{backgroundColor: "white"}} >
-        <div>
-          <h1 className="display-4 mb-1" style={{color: "#cc0033"}}>Collections</h1>
-        </div>
-        <hr/>
-        <div className="container-fluid mt-4">
-        <div className="text-center">
-        </div>
-          <div className="row align-items-stretch">
-            {/* use ternary to check if collections are in state */}
-            
-            {!this.state.collections.length
-              ? (
-                <h2 className="text-center">Collections Incoming</h2>
-              )
-              : this
-                .state
-                .collections
-                .map(collection => {
-                  return (
-                    <div className="col-12" key={collection.id}>
-                      <div className="row ml-3 my-1">
-                        <Link to={"/collections/id/" + collection.id} className="each-link-css-no-bs ml-auto">
-                        <h5>{collection.Category}</h5>
-                        </Link>
-                        <div className="btn-group mr-auto ml-5" role="group">
-                          {/* <button type="button" className="btn mr-auto px-2 py-1" style={{color: "#e9ecef", backgroundColor: "#cc0033", borderRadius: "13px"}} onClick={() => this.deleteCollection(collection.id)}>ꭙ</button> */}
+        <div className="jumbotron jumbotron-fluid text-center" style={{ backgroundColor: "white" }} >
+          <div>
+            <h1 className="display-4 mb-1" style={{ color: "#cc0033" }}>Collections</h1>
+          </div>
+          <hr />
+          <div className="container-fluid mt-4">
+            <div className="text-center">
+            </div>
+            <div className="row align-items-stretch">
+              {/* use ternary to check if collections are in state */}
+
+              {!this.state.collections.length
+                ? (
+                  <h2 className="text-center">Collections Incoming</h2>
+                )
+                : this
+                  .state
+                  .collections
+                  .map(collection => {
+                    return (
+                      // <div className="col-12" key={collection.id}>
+                      //   <div className="row ml-3 my-1">
+                      //     <Link to={"/collections/id/" + collection.id} className="each-link-css-no-bs ml-auto">
+                      //     <h5>{collection.Category}</h5>
+                      //     </Link>
+                      //     <div className="btn-group mr-auto ml-5" role="group">
+                      //       <button type="button" className="btn mr-auto px-2 py-1" style={{color: "#e9ecef", backgroundColor: "#cc0033", borderRadius: "13px"}} onClick={() => this.deleteCollection(collection.id)}>ꭙ</button>
+                      //     </div>
+                      //   </div>
+                      // </div>
+                      <div className="flip-card" key={bookmark.id}>
+                        <div className="flip-card-inner">
+                          <div className="flip-card-front" style={{ backgroundColor: "#cc0033" }}>
+                            <h1 className="text-center" style={{ marginTop: "auto", marginBottom: "auto" }}>{bookmark.title}</h1>
+                          </div>
+                          <div className="flip-card-back">
+                            <h3>{bookmark.title}</h3>
+                            <div className="row">
+                              <div className="col-6 text-center">
+                                <Link className="each-link-css-no-bs" style={{ fontSize: "1rem", marginTop: "0.5rem" }} to={"/bookmarks/id/" + bookmark.id}><p style={{ fontSize: "0.9rem", margin: "0" }}>View Full</p></Link>
+                              </div>
+                              <div className="col-6 text-center">
+                                <button type="button" className="btn mr-auto px-2 py-0" style={{ color: "#e9ecef", backgroundColor: "#cc0033", borderRadius: "13px" }} onClick={() => this.deleteBookmark(bookmark.id)}>ꭙ</button></div>
+
+                            </div>
+
+
+                          {/* <hr/> */}
+                          <a href={bookmark.link} style={{ fontSize: "1rem" }} target="_blank" className="each-link-css-no-bs">Visit Link</a>
+                          <p>{bookmark.description}</p>
                         </div>
                       </div>
                     </div>
-                  )
-                })
-            }
+                            )
+                          })
+                      }
           </div>
-          <hr/>
-          <form style={{width: "74%", marginLeft: "13%", marginRight: "13%"}}>
-          <h2 className="text-center mt-2 mb-2">Add New Collection:</h2>
-              <Input
-                value={this.state.category}
-                onChange={this.handleInputChange}
-                name="category"
-                placeholder=" e.g. Express"
-              />
-              <FormBtn
-                disabled={!(this.state.category)}
-                onClick={this.handleFormSubmit}
-              >
-                Submit Collection
+                          <hr />
+                          <form style={{ width: "74%", marginLeft: "13%", marginRight: "13%" }}>
+                            <h2 className="text-center mt-2 mb-2">Add New Collection:</h2>
+                            <Input
+                              value={this.state.category}
+                              onChange={this.handleInputChange}
+                              name="category"
+                              placeholder=" e.g. Express"
+                            />
+                            <FormBtn
+                              disabled={!(this.state.category)}
+                              onClick={this.handleFormSubmit}
+                            >
+                              Submit Collection
               </FormBtn>
-            </form>
-        </div>
+                          </form>
+                        </div>
+                      </div>
       </div>
-      </div>
-
-    )
-  }
-}
-
+        
+            )
+          }
+        }
+        
 export default Saved;
