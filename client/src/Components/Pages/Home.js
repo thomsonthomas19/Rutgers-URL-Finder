@@ -87,223 +87,163 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/* github card */}
+      {/* html-git-css*/}
 <div className="flip-card-home">
-<div className="flip-card-home-inner">
 <div className="flip-card-home-front">
-<h1>GITHUB</h1>
-</div>
-<div className="flip-card-home-back">
-</div>
+<h1>01-html-git-css</h1>
+<a href="/collections/id/2">click</a>
 </div>
 </div>
 
-      {/* html card */}
+      {/* css-bootstrap */}
       <div className="flip-card-home">
-<div className="flip-card-home-inner">
 <div className="flip-card-home-front">
-<h1>HTML</h1>
-</div>
-<div className="flip-card-home-back">
-</div>
+<h1>02-css-bootstrap</h1>
+<a href="/collections/id/3">click</a>
 </div>
 </div>
 
-      {/* CSS card */}
+      {/* javascript */}
       <div className="flip-card-home">
-<div className="flip-card-home-inner">
 <div className="flip-card-home-front">
-<h1>CSS</h1>
-</div>
-<div className="flip-card-home-back">
-</div>
+<h1>03-javascript</h1>
+<a href="/collections/id/4">click</a>
 </div>
 </div>
 
-      {/* Javascript card */}
+      {/* jQuery */}
       <div className="flip-card-home">
-<div className="flip-card-home-inner">
 <div className="flip-card-home-front">
-<h1>JAVASCRIPT</h1>
-</div>
-<div className="flip-card-home-back">
-</div>
+<h1>04-jQuery</h1>
+<a href="/collections/id/5">click</a>
 </div>
 </div>
 
-      {/* JQUERY card */}
+      {/* timers */}
       <div className="flip-card-home">
-<div className="flip-card-home-inner">
 <div className="flip-card-home-front">
-<h1>JQUERY</h1>
-</div>
-<div className="flip-card-home-back">
-</div>
+<h1>05-timers</h1>
+<a href="/collections/id/6">click</a>
 </div>
 </div>
 
-      {/* TIMERS card */}
+      {/* ajax */}
       <div className="flip-card-home">
-<div className="flip-card-home-inner">
 <div className="flip-card-home-front">
-<h1>TIMERS</h1>
-</div>
-<div className="flip-card-home-back">
-</div>
+<h1>06-ajax</h1>
+<a href="/collections/id/7">click</a>
 </div>
 </div>
 
-      {/* AJAX card */}
+      {/* firebase */}
       <div className="flip-card-home">
-<div className="flip-card-home-inner">
 <div className="flip-card-home-front">
-<h1>AJAX</h1>
-</div>
-<div className="flip-card-home-back">
-</div>
+<h1>07-firebase</h1>
+<a href="/collections/id/8">click</a>
 </div>
 </div>
 
-      {/* FIREBASE card */}
+      {/* es6 card */}
       <div className="flip-card-home">
-<div className="flip-card-home-inner">
 <div className="flip-card-home-front">
-<h1>FIREBASE</h1>
-</div>
-<div className="flip-card-home-back">
-</div>
+<h1>08-es6</h1>
+<a href="/collections/id/9">click</a>
 </div>
 </div>
 
-      {/* ES6 card */}
+      {/* node card*/}
       <div className="flip-card-home">
-<div className="flip-card-home-inner">
 <div className="flip-card-home-front">
-<h1>ES6</h1>
-</div>
-<div className="flip-card-home-back">
-</div>
+<h1>09-node</h1>
+<a href="/collections/id/10">click</a>
 </div>
 </div>
 
-      {/* NODE card */}
+      {/* js constructors card */}
       <div className="flip-card-home">
-<div className="flip-card-home-inner">
 <div className="flip-card-home-front">
-<h1>NODE</h1>
-</div>
-<div className="flip-card-home-back">
-</div>
+<h1>10-js-constructors</h1>
+<a href="/collections/id/11">click</a>
 </div>
 </div>
 
-      {/* JS CONSTRUCTORS card */}
+      {/* mysql card */}
       <div className="flip-card-home">
-<div className="flip-card-home-inner">
 <div className="flip-card-home-front">
-<h1>JS CONTRUCTORS</h1>
-</div>
-<div className="flip-card-home-back">
-</div>
+<h1>11-mysql</h1>
+<a href="/collections/id/12">click</a>
 </div>
 </div>
 
-      {/* MYSQL card */}
+      {/* express card */}
       <div className="flip-card-home">
-<div className="flip-card-home-inner">
 <div className="flip-card-home-front">
-<h1>MySQL</h1>
-</div>
-<div className="flip-card-home-back">
-</div>
+<h1>12-express</h1>
+<a href="/collections/id/13">click</a>
 </div>
 </div>
 
-      {/* EXPRESS card */}
+      {/* handlebars card */}
       <div className="flip-card-home">
-<div className="flip-card-home-inner">
 <div className="flip-card-home-front">
-<h1>EXPRESS</h1>
-</div>
-<div className="flip-card-home-back">
-</div>
+<h1>13-handlebars</h1>
+<a href="/collections/id/14">click</a>
 </div>
 </div>
 
-      {/* HANDLEBARS card */}
+      {/* sequelize card */}
       <div className="flip-card-home">
-<div className="flip-card-home-inner">
 <div className="flip-card-home-front">
-<h1>HANDLEBARS</h1>
-</div>
-<div className="flip-card-home-back">
-</div>
+<h1>14-sequelize</h1>
+<a href="/collections/id/15">click</a>
 </div>
 </div>
 
-      {/* SEQUELIZE card */}
+      {/* mongo mongoose card */}
       <div className="flip-card-home">
-<div className="flip-card-home-inner">
 <div className="flip-card-home-front">
-<h1>SEQUELIZE</h1>
-</div>
-<div className="flip-card-home-back">
-</div>
+<h1>15-mongo-mongoose</h1>
+<a href="/collections/id/16">click</a>
 </div>
 </div>
 
-      {/* MONGO card */}
+      {/* react card */}
       <div className="flip-card-home">
-<div className="flip-card-home-inner">
 <div className="flip-card-home-front">
-<h1>MONGO</h1>
-</div>
-<div className="flip-card-home-back">
-</div>
+<h1>16-react</h1>
+<a href="/collections/id/17">click</a>
 </div>
 </div>
 
-      {/* MONGOOSEcard */}
+      {/* mern card */}
       <div className="flip-card-home">
-<div className="flip-card-home-inner">
 <div className="flip-card-home-front">
-<h1>MONGOOSE</h1>
-</div>
-<div className="flip-card-home-back">
-</div>
+<h1>17-mern</h1>
+<a href="/collections/id/18">click</a>
 </div>
 </div>
 
-      {/* REACT card */}
+      {/* misc card */}
       <div className="flip-card-home">
-<div className="flip-card-home-inner">
 <div className="flip-card-home-front">
-<h1>REACT</h1>
-</div>
-<div className="flip-card-home-back">
-</div>
+<h1>18-misc</h1>
+<a href="/collections/id/19">click</a>
 </div>
 </div>
 
-      {/* MERN card */}
+      {/* videos from classcard */}
       <div className="flip-card-home">
-<div className="flip-card-home-inner">
 <div className="flip-card-home-front">
-<h1>MERN</h1>
-</div>
-<div className="flip-card-home-back">
-</div>
+<h1>19-videos-from-class</h1>
+<a href="/collections/id/20">click</a>
 </div>
 </div>
 
       {/* PANOPTO card */}
       <div className="flip-card-home">
-<div className="flip-card-home-inner">
 <div className="flip-card-home-front">
-<h1>PANOPTO</h1>
-</div>
-<div className="flip-card-home-back">
-</div>
+<h1>20-panopto</h1>
+<a href="/collections/id/21">click</a>
 </div>
 </div>
 
