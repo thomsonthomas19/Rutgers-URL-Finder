@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Link } from "react-router-dom";
+import API from '../../Utils/API';
 import picture from './images/computer.jpg';
 
 const styles = {
@@ -39,220 +41,168 @@ const styles = {
   }
 }
 
-const Home = () => {
-  return (
+class Home extends Component {
 
-    <div>
-      {/* <div className="jumbotron jumbotron-fluid"> */}
-      <div className="jumbotron" style={styles.jumbotron}>
-        <div className="container" style={styles.container}>
-          <div className="row">
-            <div className="col-sm-6 col-md-7 col-lg-8 col-sm-push-6 col-md-push-5 col-lg-push-4 bootcamp-content">
-              <h3>RUTGERS CODING BOOTCAMP</h3>
-              <h1 className="display-4">
-                Become a Fullstack Web Developer in 24 Weeks</h1>
-              <p className="lead">Part-Time: August 2018 to February 2019 at the Rutgers Somerset Campus</p>
-              <hr className="my-4">
-              </hr>
-              {/* </div> */}
-              {/* jumbotron newsletter form */}
+  state = {
+    collections: [],
+    category: ""
+  }
 
-            </div>
-            <div className="col-sm-6 col-md-7 col-lg-8 col-sm-push-6 col-md-push-5 col-lg-push-4 bootcamp-content">
-            <form>
-                <div className="form" style={styles.form}>
-                  <div className="col-sm-5 col-md-6 col-lg-7 learnMore-form">
-                    <div className="lead_form get-class-collections-info">
-                      <div className="content">
-                        <h2 className="form-get-info-title Title" aria-label="Get Class Information">Newsletter</h2>
-                        <div className="form-get-info">
-                          <form className="email-leads-form">
-                            <div className="form-group row">
-                              <label>
-                                Name:
+  // retrieve saved collections on load
+  componentDidMount() {
+    this.getCollections();
+  }
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    if (this.state.category) {
+      API.saveCollection({
+        Category: this.state.category
+      })
+        .then(res => this.getCollections())
+        .catch(err => console.log(err))
+        .then(this.resetFields)
+        .catch(err => console.log(err));
+
+
+    }
+  };
+
+  resetFields = () => {
+    this.setState({
+      category: ""
+    })
+  }
+
+  getCollections = () => {
+    console.log("GET WORKING");
+    API.getSavedCollections()
+      .then(({ data }) => this.setState({ collections: data }))
+      .catch(err => console.log(err));
+  }
+
+  // handle deleting a book
+  deleteCollection = (collectionId) => {
+    API.deleteCollection(collectionId)
+      .then(this.getCollections)
+      .catch(err => console.log(err));
+  }
+
+
+  render() {
+    console.log(this.state.collections);
+
+
+    return (
+
+      <div>
+        {/* <div className="jumbotron jumbotron-fluid"> */}
+        <div className="jumbotron" style={styles.jumbotron}>
+          <div className="container" style={styles.container}>
+            <div className="row">
+              <div className="col-sm-6 col-md-7 col-lg-8 col-sm-push-6 col-md-push-5 col-lg-push-4 bootcamp-content">
+                <h3>RUTGERS CODING BOOTCAMP</h3>
+                <h1 className="display-4">
+                  Become a Fullstack Web Developer in 24 Weeks</h1>
+                <p className="lead">Part-Time: August 2018 to February 2019 at the Rutgers Somerset Campus</p>
+                <hr className="my-4">
+                </hr>
+                {/* </div> */}
+                {/* jumbotron newsletter form */}
+
+              </div>
+              <div className="col-sm-6 col-md-7 col-lg-8 col-sm-push-6 col-md-push-5 col-lg-push-4 bootcamp-content">
+                <form>
+                  <div className="form" style={styles.form}>
+                    <div className="col-sm-5 col-md-6 col-lg-7 learnMore-form">
+                      <div className="lead_form get-class-collections-info">
+                        <div className="content">
+                          <h2 className="form-get-info-title Title" aria-label="Get Class Information">Newsletter</h2>
+                          <div className="form-get-info">
+                            <form className="email-leads-form">
+                              <div className="form-group row">
+                                <label>
+                                  Name:
               <input type="text" name="name" />
-                              </label>
-                              <label>
-                                eMail:
+                                </label>
+                                <label>
+                                  eMail:
               <input type="text" email="email" />
-                              </label>
-                              <input type="submit" value="Submit" className="btn btn-secondary btn-lg btn-block" />
-                            </div>
-                          </form>
-                        </div>
+                                </label>
+                                <input type="submit" value="Submit" className="btn btn-secondary btn-lg btn-block" />
+                              </div>
+                            </form>
+                          </div>
 
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </form>
+                </form>
+              </div>
             </div>
           </div>
         </div>
+        {/* html-git-css*/}
+        <div className="container-fluid mt-4">
+          <div className="text-center">
+          </div>
+          <div className="row align-items-stretch">
+            {/* use ternary to check if collections are in state */}
+
+            {!this.state.collections.length
+              ? (
+                <h2 className="text-center">Collections Incoming</h2>
+              )
+              : this
+                .state
+                .collections
+                .map(collection => {
+                  return (
+                    // <div className="col-12" key={collection.id}>
+                    //   <div className="row ml-3 my-1">
+                    //     <Link to={"/collections/id/" + collection.id} className="each-link-css-no-bs ml-auto">
+                    //       <h5>{collection.Category}</h5>
+                    //     </Link>
+                    //     <div className="btn-group mr-auto ml-5" role="group">
+                    //       {/* <button type="button" className="btn mr-auto px-2 py-1" style={{color: "#e9ecef", backgroundColor: "#cc0033", borderRadius: "13px"}} onClick={() => this.deleteCollection(collection.id)}>ꭙ</button> */}
+                    //     </div>
+                    //   </div>
+                    // </div>
+                    <div className="flip-card" key={collection.id}>
+                      <div className="flip-card-inner">
+                        <div className="flip-card-front" style={{ backgroundColor: "#cc0033" }}>
+                          <h1 className="text-center" style={{ marginTop: "auto", marginBottom: "auto" }}>{collection.Category}</h1>
+                        </div>
+                        <div className="flip-card-back">
+                          <h3>{collection.Category}</h3>
+                          <div className="row">
+                            <div className="col-6 text-center">
+                              <Link className="each-link-css-no-bs" style={{ fontSize: "1rem", marginTop: "0.5rem" }} to={"/collections/id/" + collection.id}><p style={{ fontSize: "0.9rem", margin: "0" }}>Go to Collection</p></Link>
+                            </div>
+                            <div className="col-6 text-center">
+                              <button type="button" className="btn mr-auto px-2 py-0" style={{ color: "#e9ecef", backgroundColor: "#cc0033", borderRadius: "13px" }} onClick={() => this.deleteCollection(collection.id)}>ꭙ</button></div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })
+            }
+          </div>
+        </div>
+
       </div>
-      {/* html-git-css*/}
-<div className="flip-card-home">
-<div className="flip-card-home-front">
-<h1>01-html-git-css</h1>
-<a href="/collections/id/2">click</a>
-</div>
-</div>
 
-      {/* css-bootstrap */}
-      <div className="flip-card-home">
-<div className="flip-card-home-front">
-<h1>02-css-bootstrap</h1>
-<a href="/collections/id/3">click</a>
-</div>
-</div>
-
-      {/* javascript */}
-      <div className="flip-card-home">
-<div className="flip-card-home-front">
-<h1>03-javascript</h1>
-<a href="/collections/id/4">click</a>
-</div>
-</div>
-
-      {/* jQuery */}
-      <div className="flip-card-home">
-<div className="flip-card-home-front">
-<h1>04-jQuery</h1>
-<a href="/collections/id/5">click</a>
-</div>
-</div>
-
-      {/* timers */}
-      <div className="flip-card-home">
-<div className="flip-card-home-front">
-<h1>05-timers</h1>
-<a href="/collections/id/6">click</a>
-</div>
-</div>
-
-      {/* ajax */}
-      <div className="flip-card-home">
-<div className="flip-card-home-front">
-<h1>06-ajax</h1>
-<a href="/collections/id/7">click</a>
-</div>
-</div>
-
-      {/* firebase */}
-      <div className="flip-card-home">
-<div className="flip-card-home-front">
-<h1>07-firebase</h1>
-<a href="/collections/id/8">click</a>
-</div>
-</div>
-
-      {/* es6 card */}
-      <div className="flip-card-home">
-<div className="flip-card-home-front">
-<h1>08-es6</h1>
-<a href="/collections/id/9">click</a>
-</div>
-</div>
-
-      {/* node card*/}
-      <div className="flip-card-home">
-<div className="flip-card-home-front">
-<h1>09-node</h1>
-<a href="/collections/id/10">click</a>
-</div>
-</div>
-
-      {/* js constructors card */}
-      <div className="flip-card-home">
-<div className="flip-card-home-front">
-<h1>10-js-constructors</h1>
-<a href="/collections/id/11">click</a>
-</div>
-</div>
-
-      {/* mysql card */}
-      <div className="flip-card-home">
-<div className="flip-card-home-front">
-<h1>11-mysql</h1>
-<a href="/collections/id/12">click</a>
-</div>
-</div>
-
-      {/* express card */}
-      <div className="flip-card-home">
-<div className="flip-card-home-front">
-<h1>12-express</h1>
-<a href="/collections/id/13">click</a>
-</div>
-</div>
-
-      {/* handlebars card */}
-      <div className="flip-card-home">
-<div className="flip-card-home-front">
-<h1>13-handlebars</h1>
-<a href="/collections/id/14">click</a>
-</div>
-</div>
-
-      {/* sequelize card */}
-      <div className="flip-card-home">
-<div className="flip-card-home-front">
-<h1>14-sequelize</h1>
-<a href="/collections/id/15">click</a>
-</div>
-</div>
-
-      {/* mongo mongoose card */}
-      <div className="flip-card-home">
-<div className="flip-card-home-front">
-<h1>15-mongo-mongoose</h1>
-<a href="/collections/id/16">click</a>
-</div>
-</div>
-
-      {/* react card */}
-      <div className="flip-card-home">
-<div className="flip-card-home-front">
-<h1>16-react</h1>
-<a href="/collections/id/17">click</a>
-</div>
-</div>
-
-      {/* mern card */}
-      <div className="flip-card-home">
-<div className="flip-card-home-front">
-<h1>17-mern</h1>
-<a href="/collections/id/18">click</a>
-</div>
-</div>
-
-      {/* misc card */}
-      <div className="flip-card-home">
-<div className="flip-card-home-front">
-<h1>18-misc</h1>
-<a href="/collections/id/19">click</a>
-</div>
-</div>
-
-      {/* videos from classcard */}
-      <div className="flip-card-home">
-<div className="flip-card-home-front">
-<h1>19-videos-from-class</h1>
-<a href="/collections/id/20">click</a>
-</div>
-</div>
-
-      {/* PANOPTO card */}
-      <div className="flip-card-home">
-<div className="flip-card-home-front">
-<h1>20-panopto</h1>
-<a href="/collections/id/21">click</a>
-</div>
-</div>
-
-    </div>
-
-  )
+    )
+  }
 }
-
-export default Home;
+  export default Home;
