@@ -109,10 +109,10 @@ class Saved extends Component {
                       // <div className="col-12" key={collection.id}>
                       //   <div className="row ml-3 my-1">
                       //     <Link to={"/collections/id/" + collection.id} className="each-link-css-no-bs ml-auto">
-                      //     <h5>{collection.Category}</h5>
+                      //       <h5>{collection.Category}</h5>
                       //     </Link>
                       //     <div className="btn-group mr-auto ml-5" role="group">
-                      //       <button type="button" className="btn mr-auto px-2 py-1" style={{color: "#e9ecef", backgroundColor: "#cc0033", borderRadius: "13px"}} onClick={() => this.deleteCollection(collection.id)}>ꭙ</button>
+                      //       {/* <button type="button" className="btn mr-auto px-2 py-1" style={{color: "#e9ecef", backgroundColor: "#cc0033", borderRadius: "13px"}} onClick={() => this.deleteCollection(collection.id)}>ꭙ</button> */}
                       //     </div>
                       //   </div>
                       // </div>
@@ -134,32 +134,32 @@ class Saved extends Component {
                           </div>
                         </div>
                       </div>
-                            )
-                          })
-                      }
-          </div>
-                          <hr />
-                          <form style={{ width: "74%", marginLeft: "13%", marginRight: "13%" }}>
-                            <h2 className="text-center mt-2 mb-2">Add New Collection:</h2>
-                            <Input
-                              value={this.state.category}
-                              onChange={this.handleInputChange}
-                              name="category"
-                              placeholder=" e.g. Express"
-                            />
-                            <FormBtn
-                              disabled={!(this.state.category)}
-                              onClick={this.handleFormSubmit}
-                            >
-                              Submit Collection
+                    )
+                  })
+              }
+            </div>
+            <hr />
+            <form style={{ width: "74%", marginLeft: "13%", marginRight: "13%" }}>
+              <h2 className="text-center mt-2 mb-2">Add New Collection:</h2>
+              <Input
+                value={this.state.category}
+                onChange={this.handleInputChange}
+                name="category"
+                placeholder=" e.g. Express"
+              />
+              <FormBtn
+                disabled={!(this.state.category)}
+                onClick={this.handleFormSubmit}
+              >
+                Submit Collection
               </FormBtn>
-                          </form>
-                        </div>
-                      </div>
+            </form>
+          </div>
+        </div>
       </div>
-        
-            )
-          }
-        }
-        
+
+    )
+  }
+}
+
 export default Saved;
