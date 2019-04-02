@@ -38,8 +38,5 @@
     "randomstring": "^1.1.5",
     "request": "^2.88.0",
     "sequelize": "^4.42.0"
-  },
-  "engines": {
-    "node": "8.12.0"
   }
 }
