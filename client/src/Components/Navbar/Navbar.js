@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg " style={{zIndex: "4"}}>
       <Link to="/" className="navbar-brand">
-      <img src={logo} style={styles.link}/>Accio,URL! </Link>
+      <img src={logo} style={styles.link}/>Accio,URLLL! </Link>
       
             <div className="" id="navbarNav">
         <ul className="navbar-nav">
