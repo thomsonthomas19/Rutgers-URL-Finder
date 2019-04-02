@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import { Input, TextArea, FormBtn } from "../Form";
-import API from '../../Utils/API';
+import API from '../../utils/API';
 
 const styles = {
   modal: {

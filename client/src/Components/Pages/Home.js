@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import API from '../../Utils/API';
+import API from '../../utils/API';
 import picture from './images/computer.jpg';
 
 const styles = {
