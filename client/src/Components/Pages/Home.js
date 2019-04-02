@@ -177,22 +177,12 @@ class Home extends Component {
                     //   </div>
                     // </div>
                     <div className="flip-card" key={collection.id}>
-                      <div className="flip-card-inner">
+                     
                         <div className="flip-card-front" style={{ backgroundColor: "#cc0033" }}>
-                          <h1 className="text-center" style={{ marginTop: "auto", marginBottom: "auto" }}>{collection.Category}</h1>
+                        <Link className="each-link-css-no-bs" style={{ fontSize: "1rem", marginTop: "0.5rem", color: "white" }} to={"/collections/id/" + collection.id}><h1 >{collection.Category}</h1></Link>
                         </div>
-                        <div className="flip-card-back">
-                          <h3>{collection.Category}</h3>
-                          <div className="row">
-                            <div className="col-6 text-center">
-                              <Link className="each-link-css-no-bs" style={{ fontSize: "1rem", marginTop: "0.5rem" }} to={"/collections/id/" + collection.id}><p style={{ fontSize: "0.9rem", margin: "0" }}>Go to Collection</p></Link>
-                            </div>
-                            <div className="col-6 text-center">
-                              <button type="button" className="btn mr-auto px-2 py-0" style={{ color: "#e9ecef", backgroundColor: "#cc0033", borderRadius: "13px" }} onClick={() => this.deleteCollection(collection.id)}>ꭙ</button></div>
 
-                          </div>
-                        </div>
-                      </div>
+                      
                     </div>
                   )
                 })
