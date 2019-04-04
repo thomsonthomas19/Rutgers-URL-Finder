@@ -25,12 +25,14 @@ const styles = {
     backgroundBlendMode: "multiply",
     padding: "100px",
     margins: "100px",
+    color: "white"
   },
   container: {
     backgroundColor: "#cc0033",
     padding: "50px",
     margins: "50px",
     opacity: ".9",
+    borderRadius: "16px"
   },
   form: {
     backgroundColor: "#cc0033",
@@ -104,22 +106,24 @@ class Home extends Component {
 
       <div>
         {/* <div className="jumbotron jumbotron-fluid"> */}
-        <div className="jumbotron" style={styles.jumbotron}>
+        <div className="jumbotron jumbotron-fluid" style={styles.jumbotron}>
           <div className="container" style={styles.container}>
             <div className="row">
-              <div className="col-sm-6 col-md-7 col-lg-8 col-sm-push-6 col-md-push-5 col-lg-push-4 bootcamp-content">
+              <div className="col-12 col-md-7">
                 <h3>RUTGERS CODING BOOTCAMP</h3>
                 <h1 className="display-4">
                   Become a Fullstack Web Developer in 24 Weeks</h1>
                 <p className="lead">Part-Time: August 2018 to February 2019 at the Rutgers Somerset Campus</p>
-                <hr className="my-4">
-                </hr>
                 {/* </div> */}
                 {/* jumbotron newsletter form */}
 
               </div>
-              <div className="col-sm-6 col-md-7 col-lg-8 col-sm-push-6 col-md-push-5 col-lg-push-4 bootcamp-content">
-                <form>
+              <div className="col-12 col-md-5">
+              <h2 className="form-get-info-title Title text-center mb-3" aria-label="Get Class Information">General Links</h2>
+                <a className="btn btn-lg btn-block my-3" href="https://bootcamp.rutgers.edu/coding/" role="button" target="_blank" style={{ backgroundColor: "#2fb67c", borderColor: "#2fb67c" }}>Course Info</a>
+                <a className="btn btn-lg btn-block my-3" href="https://www.bootcampspot.com/" role="button" target="_blank" style={{ backgroundColor: "#36c5f1", borderColor: "#36c5f1" }}>Bootcamp Spot</a>
+                <a className="btn btn-lg btn-block my-3" href="https://rutsom201807fsf4.slack.com/" role="button" target="_blank" style={{ backgroundColor: "#ecb22d", borderColor: "#ecb22d" }}>Class Slack Channel</a>
+                {/* <form>
                   <div className="form" style={styles.form}>
                     <div className="col-sm-5 col-md-6 col-lg-7 learnMore-form">
                       <div className="lead_form get-class-collections-info">
@@ -145,7 +149,7 @@ class Home extends Component {
                       </div>
                     </div>
                   </div>
-                </form>
+                </form> */}
               </div>
             </div>
           </div>
@@ -177,12 +181,12 @@ class Home extends Component {
                     //   </div>
                     // </div>
                     <div className="flip-card" key={collection.id}>
-                     
-                        <div className="flip-card-front" style={{ backgroundColor: "#cc0033" }}>
-                        <Link className="each-link-css-no-bs" style={{ fontSize: "1rem", marginTop: "0.5rem", color: "white" }} to={"/collections/id/" + collection.id}><h1 >{collection.Category}</h1></Link>
-                        </div>
 
-                      
+                      <div className="flip-card-front" style={{ backgroundColor: "#cc0033" }}>
+                        <Link className="each-link-css-no-bs" style={{ fontSize: "1rem", marginTop: "0.5rem", color: "white" }} to={"/collections/id/" + collection.id}><h1 >{collection.Category}</h1></Link>
+                      </div>
+
+
                     </div>
                   )
                 })
@@ -195,4 +199,4 @@ class Home extends Component {
     )
   }
 }
-  export default Home;
+export default Home;
